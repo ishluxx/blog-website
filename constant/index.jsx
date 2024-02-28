@@ -18,7 +18,7 @@ export const subNavLinks = [
     {  href:'/Tools',label:'TOOLS'},
 ]
 export const footerLinks = [
-    {  href:'/disclamer',label:'Disclamer'},
+    // {  href:'/disclamer',label:'Disclamer'},
     {  href:'/privacy',label:'Privacy Policy'},
     {  href:'/terms',label:'Terms and Conditions'},
 

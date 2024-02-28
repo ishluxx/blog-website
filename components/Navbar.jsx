@@ -1,12 +1,22 @@
+"use client"
 import React from 'react'
 import Image from 'next/image'
 import logo from '@/assets/logo.png'
 import icon from '@/public/icon1.png'
 import Link from 'next/link'
+import { useState } from 'react'
 import { navLinks,subNavLinks } from "@/constant/index";
 import { FaFacebook,FaGoogle,FaInstagram,FaPinterestP,FaTwitter, FaYoutube} from 'react-icons/fa'
-
+import { FaBars } from 'react-icons/fa';
 const Navbar = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+
   return (
     <main > 
       <nav className='bg-white '>

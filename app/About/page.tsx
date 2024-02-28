@@ -77,6 +77,46 @@ export default function Example() {
             ))}
           </dl>
         </div>
+      <div className="mx-auto max-w-7xl mt-5 px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:text-center">
+          <p className="mt-2 text-3xl font-bold  tracking-tight text-gray-900 sm:text-4xl">
+          What we aim with Get-Solution
+          </p>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+          As mentioned already, Tech Quintal will be your final destination for any kind of
+           technology needs whether it is a guide, review, or anything else. We want to provide 
+           100% satisfying information to our readers. We will never provide misleading or
+            irrelevant content to our readers without adding sufficient value. Even if we
+             accept advertisements and sponsored articles, we will always try to publish them 
+             in a user-friendly manner. So no ads or sponsored content will mislead our readers 
+             in any manner. Our goal is to join thousands or millions of good websites all around the 
+             internet to build a better informative tomorrow.
+          </p>
+          <p className="mt-2 text-3xl font-bold  tracking-tight text-gray-900 sm:text-4xl">
+          A little background
+          </p>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+          After setting up numerous blogs on various niches, our team thought of creating something 
+          unique that differs from any other websites out there. Instead of just writing to earn some money,
+           we’ve decided to provide something useful to the readers and to earn their love. So far, we’ve 
+           seen so many websites that publish random content without adding sufficient value. Even if it is
+            for their little earnings, it has a huge role in misleading readers to the wrong destination and 
+            other kinds of unuseful websites.
+            </p>
+            <p className="mt-6 text-lg leading-8 text-gray-600">So, we thought of trying to make at least a small change to this
+             by putting forward a useful website with unique valuable information. Even if we can’t make a complete wipeout
+              of such bad content, we will be at least driving some visitors to the resourceful pages on our website.
+            </p>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+            As mentioned in our aims section, we will be completely relying on visitors without giving importance to 
+            the earnings. But yes, we do put some affiliate links and paid banners aside for the website maintenance costs. 
+            But only without affecting the user experience at all. If you have further queries regarding our website, 
+            feel free to drop a message from our Contact Us page. We will be always happy to reply to your messages. 
+            Keep supporting us by visiting the website more often, only if you think, the website is worth a second visit. 
+            We hope for the best.
+          </p>
+        </div>
+        </div>
       </div>
     </div>
   )

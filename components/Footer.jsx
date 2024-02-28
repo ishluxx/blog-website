@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaPinterestP, FaTwitter, FaYoutube } from 'rea
 import { footerLinks } from '@/constant'
 export default function Footer() {
   return (
-     <main className=' text-white flex justify-center w-full h-94 bottom-0 md:mx-auto bg-gradient-to-br from-blue-600 to-blue-400' >
+     <main className=' text-white flex justify-center w-full h-94 bottom-0 md:mx-auto bg-blue-500 ' >
       <div className='mt-8'>
         <div className='flex justify-center mb-3 font-[Poppins] gap-3'>
           <p>About Us</p>
