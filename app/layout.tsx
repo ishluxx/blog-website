@@ -19,7 +19,9 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
     <html lang="en">
       <body className={inter.className}>
         <Navbar/>
+        <main className="p-5">
         {children}
+        </main>
         <Footer/>
         </body>
     </html>

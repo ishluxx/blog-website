@@ -7,6 +7,7 @@ export const navLinks = [
 ]
 
 export const subNavLinks = [
+    {  href:'/',label:'Home'},
     {  href:'/Howto',label:'HOW TO'},
     {  href:'/Troubleshoot',label:'TROUBLESHOOT'},
     {  href:'/Social',label:'SOCIAL'},
@@ -17,9 +18,9 @@ export const subNavLinks = [
     {  href:'/Tools',label:'TOOLS'},
 ]
 export const footerLinks = [
-    {  href:'/Disclamer',label:'DISCLAMER'},
-    {  href:'/Privacy',label:'PRIVACY POLICY'},
-    {  href:'/Terms',label:'TERMS AND CONDITION'},
+    {  href:'/disclamer',label:'Disclamer'},
+    {  href:'/privacy',label:'Privacy Policy'},
+    {  href:'/terms',label:'Terms and Conditions'},
 
 ]
 

@@ -32,7 +32,7 @@ const Navbar = () => {
           {/* on large device */}
           <ul className=' md:flex hidden uppercase items-center gap-8 font-[Poppins] '>
             {navLinks.map((link)=>(
-              <li key={link.href}  className=' text-black cursor-pointer hover:text-blue-500 font-semibold '>
+              <li key={link.href}  className=' text-black cursor-pointer hover:text-blue-500 duration-0 hover:duration-300 font-semibold '>
                 <Link href={link.href}>{link.label}</Link>
               </li>
             ))}
@@ -49,9 +49,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className='mb-4 border-b-4 '>
-          <ul className='mb-4 text-black md:flex hidden justify-start lg:px-52 px-5  uppercase items-center gap-4 font-[Poppins]'>
+          <ul className='mb-4 text-black md:flex hidden justify-start lg:px-52 px-4  uppercase items-center gap-4 font-[Poppins]'>
             {subNavLinks.map((sub)=>(
-             <li key={sub.href} className='hover:text-blue-500 font-semibold '>
+             <li key={sub.href} className='hover:text-blue-500 duration-0 hover:duration-300  '>
               <Link href={sub.href} className=''>{sub.label}</Link>
              </li>
             ))}
