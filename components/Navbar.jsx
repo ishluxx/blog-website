@@ -8,8 +8,8 @@ import { FaFacebook,FaGoogle,FaInstagram,FaPinterestP,FaTwitter, FaYoutube} from
 
 const Navbar = () => {
   return (
-    <main>
-      <nav className='bg-white'>
+    <main > 
+      <nav className='bg-white '>
       <div className='flex justify-end py-1 pr-20 w-full h-2 gap-3 mt-1  text-black'>
         <FaFacebook className=' hover:text-blue-500'/>
         <FaInstagram className=' hover:text-red-300'/>

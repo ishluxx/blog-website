@@ -8,13 +8,15 @@ import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ["latin"] });
 
+
 export const metadata: Metadata = {
   title: "This is my blog website",
-  description: "Luxxtech this is website that offer tech solution",
+  description: "Get-Solution this is website that offer tech solution",
 };
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>)
  {
+
   return (
     <html lang="en">
       <body className={inter.className}>
