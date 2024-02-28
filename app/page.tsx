@@ -1,10 +1,8 @@
 import React from 'react'
-import Post from '@/components/Post'
 
 const page = () => {
   return (
-    <main className='mx-[200px]'>
-      <Post/>
+    <main className='max-w-7xl m-auto h-[46vh]'>
       <div>home page  </div>
     </main>
   )

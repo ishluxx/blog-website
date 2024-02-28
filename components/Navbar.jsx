@@ -1,26 +1,19 @@
 "use client"
 import React from 'react'
 import Image from 'next/image'
-import logo from '@/assets/logo.png'
 import icon from '@/public/icon1.png'
 import Link from 'next/link'
 import { useState } from 'react'
 import { navLinks,subNavLinks } from "@/constant/index";
 import { FaFacebook,FaGoogle,FaInstagram,FaPinterestP,FaTwitter, FaYoutube} from 'react-icons/fa'
-import { FaBars } from 'react-icons/fa';
+import { FaBars,FaTimes } from 'react-icons/fa';
 const Navbar = () => {
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
+  const [Open, setOpen] = useState(false);
 
   return (
     <main > 
       <nav className='bg-white '>
-      <div className='flex justify-end py-1 pr-20 w-full h-2 gap-3 mt-1  text-black'>
+      <div className='hidden md:flex justify-end py-1 pr-20 w-full h-2 gap-3 mt-1  text-black'>
         <FaFacebook className=' hover:text-blue-500'/>
         <FaInstagram className=' hover:text-red-300'/>
         <FaPinterestP className=' hover:text-red-500'/>
@@ -29,15 +22,18 @@ const Navbar = () => {
         <FaYoutube className=' hover:text-red-500'/>
       </div>
         <div className='flex items-center font-medium justify-around'>
-          <div className='z-50  md:w-auto w-full'>
+          <div className='z-50  md:w-auto w-full flex justify-between sticky'>
                 <Link href='/'>
                   <Image 
-                    className='md:cursor-pointer  '
+                    className='md:cursor-pointer ml-3  '
                     src={icon}
                     alt='logo'
                     width={140}
                     />
                 </Link>
+                    <div className="text-3xl md:hidden py-14  pr-5 " onClick={() => setOpen(!Open)}>
+                      {Open ? <FaTimes/> : <FaBars/>}
+                    </div>
           </div>
           {/* on large device */}
           <ul className=' md:flex hidden uppercase items-center gap-8 font-[Poppins] '>
@@ -48,18 +44,21 @@ const Navbar = () => {
             ))}
           </ul>
           {/* on small device  */}
-          <ul className={`md:hidden bg-white absolute w-full h-full bottom-0 py-24 pl-4 uppercase font-[Poppins] `}> 
+          <ul className={`md:hidden bg-white absolute w-full top-20  py-28  pl-4 uppercase font-[Poppins] duration-500 ${Open ? "top-0" : "top-[-100%]"} `}> 
               {navLinks.map((links)=>(
                 <li key={links.href} className='py-7 px-5 text-left md:cursor-pointer ' >
-                  <Link href={links.href}>
+                  <a href={links.href}>
                   {links.label} 
-                  </Link>
+                  </a>
                 </li>
               ))}
           </ul>
         </div>
         <div className='mb-4 border-b-4 '>
           <ul className='mb-4 text-black md:flex hidden justify-start lg:px-52 px-4  uppercase items-center gap-4 font-[Poppins]'>
+            <li>
+              
+            </li>
             {subNavLinks.map((sub)=>(
              <li key={sub.href} className='hover:text-blue-500 duration-0 hover:duration-300  '>
               <Link href={sub.href} className=''>{sub.label}</Link>
