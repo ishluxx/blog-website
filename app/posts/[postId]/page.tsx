@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>page a </div>
   )
 }
 
