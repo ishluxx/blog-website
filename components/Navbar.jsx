@@ -35,6 +35,7 @@ const Navbar = () => {
                       {Open ? <FaTimes/> : <FaBars/>}
                     </div>
           </div>
+          
           {/* on large device */}
           <ul className=' md:flex hidden uppercase items-center gap-8 font-[Poppins] '>
             {navLinks.map((link)=>(
