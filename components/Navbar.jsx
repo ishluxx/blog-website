@@ -22,7 +22,7 @@ const Navbar = () => {
         <FaYoutube className=' hover:text-red-500'/>
       </div>
         <div className='flex items-center font-medium justify-around'>
-          <div className='z-50  md:w-auto w-full flex justify-between sticky'>
+          <div className='z-50  md:w-auto w-full flex justify-between'>
                 <Link href='/'>
                   <Image 
                     className='md:cursor-pointer ml-3  '
@@ -35,7 +35,6 @@ const Navbar = () => {
                       {Open ? <FaTimes/> : <FaBars/>}
                     </div>
           </div>
-          
           {/* on large device */}
           <ul className=' md:flex hidden uppercase items-center gap-8 font-[Poppins] '>
             {navLinks.map((link)=>(
@@ -45,7 +44,7 @@ const Navbar = () => {
             ))}
           </ul>
           {/* on small device  */}
-          <ul className={`md:hidden bg-white absolute w-full top-20  py-28  pl-4 uppercase font-[Poppins] duration-500 ${Open ? "top-0" : "top-[-100%]"} `}> 
+          <ul className={`md:hidden bg-white absolute w-full top-20  py-24  pl-4 uppercase font-[Poppins] duration-500 ${Open ? "top-0" : "top-[-100%]"} `}> 
               {navLinks.map((links)=>(
                 <li key={links.href} className='py-7 px-5 text-left md:cursor-pointer ' >
                   <a href={links.href}>
@@ -53,13 +52,17 @@ const Navbar = () => {
                   </a>
                 </li>
               ))}
+              <ul className='grid grid-cols-2 gap-5 px-2 '>
+                {subNavLinks.map((sub)=>(
+                  <li key={sub.href} className='hover:text-blue-500 duration-0 hover:duration-300  px-5 '>
+              <Link href={sub.href} className=''>{sub.label}</Link>
+             </li>
+            ))}
+            </ul>
           </ul>
         </div>
         <div className='mb-4 border-b-4 '>
           <ul className='mb-4 text-black md:flex hidden justify-start lg:px-52 px-4  uppercase items-center gap-4 font-[Poppins]'>
-            <li>
-              
-            </li>
             {subNavLinks.map((sub)=>(
              <li key={sub.href} className='hover:text-blue-500 duration-0 hover:duration-300  '>
               <Link href={sub.href} className=''>{sub.label}</Link>

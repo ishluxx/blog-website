@@ -43,7 +43,7 @@ export default function Example() {
   return (
     <div className="bg-white py-14 sm:py-22">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:text-center">
+        <div className="mx-auto max-w-4xl lg:text-center">
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           About 
           </p>
@@ -62,7 +62,7 @@ export default function Example() {
           What you will find in Get-Solution
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+        <div className="mx-auto mt-16 max-w-3xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
             {features.map((feature) => (
               <div key={feature.name} className="relative pl-16">
@@ -78,7 +78,7 @@ export default function Example() {
           </dl>
         </div>
       <div className="mx-auto max-w-7xl mt-5 px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:text-center">
+        <div className="mx-auto max-w-4xl lg:text-center">
           <p className="mt-2 text-3xl font-bold  tracking-tight text-gray-900 sm:text-4xl">
           What we aim with Get-Solution
           </p>

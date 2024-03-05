@@ -7,12 +7,12 @@ export const navLinks = [
 ]
 
 export const subNavLinks = [
+    // {  href:'/',label:'HOME'},
     {  href:'/Howto',label:'HOW TO'},
     {  href:'/Troubleshoot',label:'TROUBLESHOOT'},
     {  href:'/Social',label:'SOCIAL'},
     {  href:'/Internet',label:'INTERNET'},
-    {  href:'/General',label:'GENERAL'},
-    {  href:'/News',label:'NEWS'},
+    {  href:'/Finance',label:'FINANCE'},
     {  href:'/Top10',label:'TOP10'},
     {  href:'/Tools',label:'TOOLS'},
 ]
