@@ -16,7 +16,7 @@ export default function Footer() {
           <FaInstagram />
           <FaPinterestP />
           <FaTwitter />
-          <FaYoutube />
+          {/* <FaYoutube /> */}
         </div>
         <div className='mt-4 text-center px-3' >
           <p className=' flex justify-center'> &copy;2023- an Affiliate advertising program designed to provide a means for sites to </p>
@@ -25,7 +25,7 @@ export default function Footer() {
              <ul className='md:flex justify-center mt-4 mb-5 px-3 gap-2 grid grid-cols-2 '>
               {footerLinks.map((links)=>(
                 <li key={links} className='md:cursor-pointer'>
-                  <Link href={links.href}>{links.label}</Link>
+                  <a href={links.href}>{links.label}</a>
                 </li>
               ))}
              </ul>

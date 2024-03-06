@@ -12,8 +12,9 @@ const page = () => {
     <div className="flex justify-between items-center mb-6">
       <div className="flex w-full sm:items-center gap-x-5 sm:gap-x-3">
         <div className="flex-shrink-0">
-          <Image className="size-12 rounded-full" src={img1} alt="Image Description"/>
+          <Image className="size-12 rounded-full" src="https://ishluxx.github.io/author/1504.jpg" alt="Image Description" width={50} height={50}/>
         </div>
+
         <div className="grow">
           <div className="flex justify-between items-center gap-x-2">
             <div>
@@ -21,7 +22,7 @@ const page = () => {
               <div className="hs-tooltip inline-block [--trigger:hover] [--placement:bottom]">
                 <div className="hs-tooltip-toggle sm:mb-1 block text-start cursor-pointer">
                   <span className="font-semibold text-black ">
-                    Leyla Ludic
+                    Ish Luxx
                   </span>
                 </div>
               </div>

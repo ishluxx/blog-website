@@ -18,8 +18,7 @@ const Navbar = () => {
         <FaInstagram className=' hover:text-red-300'/>
         <FaPinterestP className=' hover:text-red-500'/>
         <FaTwitter className=' hover:text-blue-300'/>
-        <FaGoogle className=' hover:text-red-400'/>
-        <FaYoutube className=' hover:text-red-500'/>
+        {/* <FaYoutube className=' hover:text-red-500'/> */}
       </div>
         <div className='flex items-center font-medium justify-around'>
           <div className='z-50  md:w-auto w-full flex justify-between'>
