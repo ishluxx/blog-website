@@ -14,7 +14,6 @@ const page = () => {
         <div className="flex-shrink-0">
           <Image className="size-12 rounded-full" src={img1} alt="Image Description"/>
         </div>
-
         <div className="grow">
           <div className="flex justify-between items-center gap-x-2">
             <div>
