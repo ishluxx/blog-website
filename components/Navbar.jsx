@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <main > 
-      <nav className='bg-white '>
+      <nav className='bg-white'>
       <div className='hidden md:flex justify-end py-1 pr-20 w-full h-2 gap-3 mt-1  text-black'>
         <FaFacebook className=' hover:text-blue-500'/>
         <FaInstagram className=' hover:text-red-300'/>
@@ -20,7 +20,7 @@ const Navbar = () => {
         <FaTwitter className=' hover:text-blue-300'/>
         {/* <FaYoutube className=' hover:text-red-500'/> */}
       </div>
-        <div className='flex items-center font-medium justify-around'>
+        <div className='flex  items-center font-medium justify-around'>
           <div className='z-50  md:w-auto w-full flex justify-between'>
                 <Link href='/'>
                   <Image 
@@ -43,7 +43,8 @@ const Navbar = () => {
             ))}
           </ul>
           {/* on small device  */}
-          <ul className={`md:hidden bg-white absolute w-full top-20  py-24  pl-4 uppercase font-[Poppins] duration-500 ${Open ? "top-0" : "top-[-100%]"} `}> 
+          <div></div>
+          <ul className={`lg:hidden z-10 bg-white absolute  w-full top-20  py-24  pl-4 uppercase font-[Poppins] duration-500 ${Open ? "top-0" : "top-[-100%]"} `}> 
               {navLinks.map((links)=>(
                 <li key={links.href} className='py-7 px-5 text-left md:cursor-pointer ' >
                   <a href={links.href}>
@@ -51,7 +52,7 @@ const Navbar = () => {
                   </a>
                 </li>
               ))}
-              <ul className='grid grid-cols-2 gap-5 px-2 '>
+              <ul className='grid grid-cols-2 gap-5 px-2 bg-white'>
                 {subNavLinks.map((sub)=>(
                   <li key={sub.href} className='hover:text-blue-500 duration-0 hover:duration-300  px-5 '>
               <Link href={sub.href} className=''>{sub.label}</Link>
@@ -60,10 +61,10 @@ const Navbar = () => {
             </ul>
           </ul>
         </div>
-        <div className='mb-4 border-b-4 '>
-          <ul className='mb-4 text-black md:flex hidden justify-start lg:px-52 px-4  uppercase items-center gap-4 font-[Poppins]'>
+        <div className=' border-b-4 '>
+          <ul className='mb-1 text-black md:flex hidden justify-start lg:px-52 px-4  uppercase items-center gap-4 font-[Poppins]'>
             {subNavLinks.map((sub)=>(
-             <li key={sub.href} className='hover:text-blue-500 duration-0 hover:duration-300  '>
+             <li key={sub.href} className='hover:text-blue-500 duration-0 hover:duration-300 font-semibold  '>
               <Link href={sub.href} className=''>{sub.label}</Link>
              </li>
             ))}

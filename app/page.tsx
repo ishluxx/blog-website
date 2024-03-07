@@ -1,97 +1,244 @@
 import React from 'react'
 import Image from 'next/image'
+import { delay } from "@/lib/utils";
 import img1 from '@/assets/img1.jpg'
+import { BlogPostsResponse } from "@/models/BlogPost";
 
-const page = () => {
+export default async function page()  {
+  const response = await fetch("https://jsonserver1-yblk.onrender.com/post")
+    const { posts }: BlogPostsResponse = await response.json();
+
+    await delay(1000);
   return (
     <main>
-   {/* <!-- Blog Article --> */}
-<div className="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
-  <div className="max-w-2xl">
-    {/* <!-- Avatar Media --> */}
-    <div className="flex justify-between items-center mb-6">
-      <div className="flex w-full sm:items-center gap-x-5 sm:gap-x-3">
-        <div className="flex-shrink-0">
-          <Image className="size-12 rounded-full" src="https://ishluxx.github.io/author/1504.jpg" alt="Image Description" width={50} height={50}/>
-        </div>
-
-        <div className="grow">
-          <div className="flex justify-between items-center gap-x-2">
-            <div>
-              {/* <!-- Tooltip --> */}
-              <div className="hs-tooltip inline-block [--trigger:hover] [--placement:bottom]">
-                <div className="hs-tooltip-toggle sm:mb-1 block text-start cursor-pointer">
-                  <span className="font-semibold text-black ">
-                    Ish Luxx
-                  </span>
-                </div>
-              </div>
-              {/* <!-- End Tooltip --> */}
-              <ul className="text-xs text-black">
-                <li className="inline-block  pe-6 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-2 before:-translate-y-1/2 before:size-1 before:bg-gray-300 before:rounded-full dark:text-gray-400 dark:before:bg-gray-600">
-                  Jan 18
-                </li>
-              </ul>
+   {/* <!-- Card Blog --> */}
+  <section>
+    {/* full image grid and flex */}
+    {/* <!-- Card Blog --> */}
+<div className="max-w-full px-2 sm:px-2 lg:px-8 lg:py-5 mx-auto">
+  {/* <!-- Grid --> */}
+  <div className="grid lg:grid-cols-2  gap-0.5">
+    {/* <!-- Card --> */}
+    <a className="group relative   dark:focus:outline-none " href="#">
+      <div className="flex-shrink-0 relative  overflow-hidden w-full lg:h-[723px] h-[350px] before:absolute before:inset-x-0 before:size-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]">
+        <Image className="size-full absolute top-0 start-0 object-cover" src={img1} alt="Image Description"/>
+      </div>
+      <div className="absolute top-0 inset-x-0 ">
+        <div className="p-4 flex flex-col h-full sm:p-6">
+          {/* <!-- Avatar --> */}
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <Image className="size-[46px] border-2 border-white rounded-full" src="https://ishluxx.github.io/author/1504.jpg" width={50} height={50} alt="Image Description"/> 
             </div>
-            {/* <!-- Button Group --> */}
-            <div>
-              <button type="button" className="py-1.5 px-2.5 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
-                <svg className="size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-                </svg>
-                Twitter
-              </button>
+            <div className="ms-2.5 sm:ms-4">
+              <h4 className="font-semibold text-white">
+                Ish Luxx
+              </h4>
+              <p className="text-xs text-white/[.8]">
+                march 01, 2024
+              </p>
             </div>
-            {/* <!-- End Button Group --> */}
           </div>
+          {/* <!-- End Avatar --> */}
         </div>
       </div>
-    </div>
-    {/* <!-- End Avatar Media --> */}
-    {/* <!-- Content --> */}
-    <div className="space-y-5 md:space-y-8">
-      <div className="space-y-3">
-        <h2 className="text-2xl font-bold md:text-3xl text-black">Announcing a free plan for small teams</h2>
-        <p className="text-lg text-black">At preline, our mission has always been focused on bringing openness and transparency to the design process. ve always believed that by providing a space where designers can share ongoing work not only empos them to make better products, it also helps them grow.</p>
+
+      <div className="absolute bottom-0 inset-x-0 ">
+        <div className="flex flex-col h-full p-4 sm:p-6">
+          <h3 className="text-lg sm:text-3xl font-semibold text-white group-hover:text-white/[.8]">
+            Facebook is creating a news section in Watch to feature breaking news
+          </h3>
+          <p className="mt-2 text-white/[.8]">
+            Facebook launched the Watch platform in August
+          </p>
+        </div>
       </div>
-      <p className="text-lg text-black">re proud to be a part of creating a more open culture and to continue building a product that supports this vision.</p>
-      <figure>
-        <Image className="w-full object-cover rounded-xl" src={img1} alt="Image Description"/>
-        <figcaption className="mt-3 text-sm text-center text-black">
-          A woman sitting at a table.
-        </figcaption>
-      </figure>
-      <p className="text-lg text-black">As ve grown, ve seen how Preline has helped companies such as Spotify, Microsoft, Airbnb, Facebook, and Intercom bring their designers closer together to create amazing things. ve also learned that when the culture of sharing is brought in earlier, the better teams adapt and communicate with one another.</p>
-      <p className="text-lg text-black">s why are excited to share that now have a <a className="text-blue-600 decoration-2 hover:underline font-medium" href="#">free version of Preline</a>, which will allow individual designers, startups and other small teams a chance to create a culture of openness early on.</p>
-      <blockquote className="text-center p-4 sm:px-7">
-        <p className="text-xl font-medium text-black md:text-2xl md:leading-normal xl:text-2xl xl:leading-normal">
-          To say that switching to Preline has been life-changing is an understatement. My business has tripled and I got my life back.
-        </p>
-        <p className="mt-5 text-black">
-          Nicole Grazioso
-        </p>
-      </blockquote>
-      <figure>
-        <Image className="w-full object-cover rounded-xl" src={img1} alt="Image Description"/>
-        <figcaption className="mt-3 text-sm text-center text-black">
-          A man and a woman looking at a cell phone.
-        </figcaption>
-      </figure>
-      <div className="space-y-3">
-        <h3 className="text-2xl font-semibold ">Bringing the culture of sharing to everyone</h3>
-        <p className="text-lg text-black">know the po of sharing is real, and want to create an opportunity for everyone to try Preline and explore how transformative open communication can be. Now you can have a team of one or two designers and unlimited spectators (think PMs, management, marketing, etc.) share work and explore the design process earlier.</p>
+    </a>
+    {/* <!-- End Card --> */}
+
+<div className='grid lg:grid-rows-2 gap-0.5'>
+    {/* <!-- Card --> */}
+    <a className="group relative block dark:focus:outline-none d" href="#">
+      <div className="flex-shrink-0 relative  overflow-hidden w-full h-[360px] before:absolute before:inset-x-0 before:size-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]">
+        <Image className="size-full absolute top-0 start-0 object-cover" src={img1} alt="Image Description"/>
       </div>
-      <ul className="list-disc list-outside space-y-5 ps-5 text-lg text-black ">
-        <li className="ps-2">Preline allows us to collaborate in real time and is a really great way for leadership on the team to stay up-to-date with what everybody is working on  <a className="text-blue-600 decoration-2 hover:underline font-medium" href="#">said</a> Stewart Scott-Curran, Intercoms Director of Brand Design.</li>
-        <li className="ps-2">Preline opened a new way of sharing.  a persistent way for everyone to see and absorb each  said David Scott, Creative Director at <a className="text-blue-600 decoration-2 hover:underline font-medium" href="#">Eventbrite</a>.</li>
-      </ul>
-      <p className="text-lg text-black">Small teams and individual designers need a space where they can watch the design process unfold, both for themselves and for the people they work with – no matter if its a fellow designer, product manager, developer or client. Preline allows you to invite more people into the process, creating a central place for conversation around design. As those teams grow, transparency and collaboration becomes integrated in how they communicate and work together.</p>
-    </div>
-    {/* <!-- End Content --> */}
+
+      <div className="absolute top-0 inset-x-0 ">
+        <div className="p-4 flex flex-col h-full sm:p-6">
+          {/* <!-- Avatar --> */}
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <Image className="size-[46px] border-2 border-white rounded-full" src="https://ishluxx.github.io/author/1504.jpg" width={50} height={50} alt="Image Description"/>
+            </div>
+            <div className="ms-2.5 sm:ms-4">
+              <h4 className="font-semibold text-white">
+                Ish Luxx
+              </h4>
+              <p className="text-xs text-white/[.8]">
+                March 01, 2024
+              </p>
+            </div>
+          </div>
+          {/* <!-- End Avatar --> */}
+        </div>
+      </div>
+
+      <div className="absolute bottom-0 inset-x-0 ">
+        <div className="flex flex-col h-full p-4 sm:p-6">
+          <h3 className="text-lg sm:text-3xl font-semibold text-white group-hover:text-white/[.8]">
+            What CFR (Conversations, Feedback, Recognition) really is about
+          </h3>
+          <p className="mt-2 text-white/[.8]">
+            For a lot of people these days, Measure What Matters.
+          </p>
+        </div>
+      </div>
+    </a>
+    {/* <!-- End Card --> */}
+    {/* <!-- Card --> */}
+    <a className="group relative block dark:focus:outline-none d" href="#">
+      <div className="flex-shrink-0 relative  overflow-hidden w-full h-[360px] before:absolute before:inset-x-0 before:size-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]">
+        <Image className="size-full absolute top-0 start-0 object-cover" src={img1} alt="Image Description"/>
+      </div>
+
+      <div className="absolute top-0 inset-x-0 ">
+        <div className="p-4 flex flex-col h-full sm:p-6">
+          {/* <!-- Avatar --> */}
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <Image className="size-[46px] border-2 border-white rounded-full" src="https://ishluxx.github.io/author/1504.jpg" width={50} height={50} alt="Image Description"/>
+            </div>
+            <div className="ms-2.5 sm:ms-4">
+              <h4 className="font-semibold text-white">
+                Ish Luxx
+              </h4>
+              <p className="text-xs text-white/[.8]">
+                March 01, 2024
+              </p>
+            </div>
+          </div>
+          {/* <!-- End Avatar --> */}
+        </div>
+      </div>
+
+      <div className="absolute bottom-0 inset-x-0 ">
+        <div className="flex flex-col h-full p-4 sm:p-6">
+          <h3 className="text-lg sm:text-3xl font-semibold text-white group-hover:text-white/[.8]">
+            What CFR (Conversations, Feedback, Recognition) really is about
+          </h3>
+          <p className="mt-2 text-white/[.8]">
+            For a lot of people these days, Measure What Matters.
+          </p>
+        </div>
+      </div>
+    </a>
+    {/* <!-- End Card --> */}
   </div>
 </div>
+  {/* <!-- End Grid --> */}
+</div>
+{/* <!-- End Card Blog --> */}
+  </section>
+<div className="max-w-[85rem] px-4 py-5 sm:px-6 lg:px-8 lg:py-5 mx-auto">
+  <section>
+  {/* <!-- Grid --> */}
+  <h2 className='text-2xl px-4 mb-5 font-[poppine]'>HOW TO</h2>
+  <div className="grid lg:grid-cols-2 lg:gap-y-16 gap-10">
+    {/* <!-- Card --> */}
+    <a className="group rounded-xl overflow-hidden dark:focus:outline-none dark:focus:ring-1" href="#">
+      <div className="sm:flex">
+        <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
+          <Image className="group-hover:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl" src={img1}  alt="Image Description"/>
+        </div>
+        <div className="grow mt-4 sm:mt-0 sm:ms-6 px-4 sm:px-0">
+          <h3 className="text-xl font-semibold">
+            Studio by Preline
+          </h3>
+          <p className="mt-3">
+            Produce professional, reliable streams easily leveraging Prelines innovative broadcast studio
+          </p>
+          <p className="mt-4 inline-flex items-center gap-x-1 text-blue-600 decoration-2 hover:underline font-medium">
+            Read more
+            <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </p>
+        </div>
+      </div>
+    </a>
+    {/* <!-- End Card --> */}
+
+    {/* <!-- Card --> */}
+    <a className="group rounded-xl overflow-hidden dark:focus:outline-none dark:focus:ring-1" href="#">
+      <div className="sm:flex">
+        <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
+          <Image className="group-hover:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl" src={img1} alt="Image Description"/>
+        </div>
+
+        <div className="grow mt-4 sm:mt-0 sm:ms-6 px-4 sm:px-0">
+          <h3 className="text-xl font-semibold">
+            Onsite
+          </h3>
+          <p className="mt-3">
+            Optimize your in-person experience with best-in-className capabilities like badge printing and lead retrieval
+          </p>
+          <p className="mt-4 inline-flex items-center gap-x-1 text-blue-600 decoration-2 hover:underline font-medium">
+            Read more
+            <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </p>
+        </div>
+      </div>
+    </a>
+    {/* <!-- End Card --> */}
+
+    {/* <!-- Card --> */}
+    <a className="group rounded-xl overflow-hidden dark:focus:outline-none dark:focus:ring-1" href="#">
+      <div className="sm:flex">
+        <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
+          <Image className="group-hover:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl" src={img1} alt="Image Description"/>
+        </div>
+
+        <div className="grow mt-4 sm:mt-0 sm:ms-6 px-4 sm:px-0">
+          <h3 className="text-xl font-semibold ">
+            The complete guide to OKRs
+          </h3>
+          <p className="mt-3 ">
+            How to make objectives and key results work for your company
+          </p>
+          <p className="mt-4 inline-flex items-center gap-x-1 text-blue-600 decoration-2 hover:underline font-medium">
+            Read more
+            <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </p>
+        </div>
+      </div>
+    </a>
+    {/* <!-- End Card --> */}
+
+    {/* <!-- Card --> */}
+    <a className="group rounded-xl overflow-hidden :focus:outline-none dark:focus:ring-1" href="#">
+      <div className="sm:flex">
+        <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
+          <Image className="group-hover:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl" src={img1} alt="Image Description"/>
+        </div>
+
+        <div className="grow mt-4 sm:mt-0 sm:ms-6 px-4 sm:px-0">
+          <h3 className="text-xl font-semibold">
+            People program models
+          </h3>
+          <p className="mt-3">
+            Six approaches to bringing your People strategy to life
+          </p>
+          <p className="mt-4 inline-flex items-center gap-x-1 text-blue-600 decoration-2 hover:underline font-medium">
+            Read more
+            <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </p>
+        </div>
+      </div>
+    </a>
+    {/* <!-- End Card --> */}
+  </div>
+  {/* <!-- End Grid --> */}
+  </section>
+</div>
+{/* <!-- End Card Blog --> */}
 </main>
   )
 }
-
-export default page

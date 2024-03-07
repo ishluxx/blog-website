@@ -19,7 +19,7 @@ export default function Footer() {
           {/* <FaYoutube /> */}
         </div>
         <div className='mt-4 text-center px-3' >
-          <p className=' flex justify-center'> &copy;2023- an Affiliate advertising program designed to provide a means for sites to </p>
+          <p className=' flex justify-center'> &copy;{new Date().getFullYear()} an Affiliate advertising program designed to provide a means for sites to </p>
            <p className=' flex justify-center' >earn advertising fees by advertising and linking to amazon.com</p>
         </div>
              <ul className='md:flex justify-center mt-4 mb-5 px-3 gap-2 grid grid-cols-2 '>

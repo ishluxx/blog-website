@@ -19,7 +19,7 @@ const Scoll = () => {
   return (
     <div>
          <div
-      className="fixed top-0 left-0 w-full h-1 bg-blue-500"
+      className="fixed z-10 top-0 left-0 w-full h-1 bg-blue-500"
       style={{ width: `${scrollPercentage}%`, transition: 'width 0.1s' }}
     ></div>
     </div>
