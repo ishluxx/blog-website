@@ -1,14 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
-import { delay } from "@/lib/utils";
 import img1 from '@/assets/img1.jpg'
-import { BlogPostsResponse } from "@/models/BlogPost";
 
 export default async function page()  {
-  const response = await fetch("https://jsonserver1-yblk.onrender.com/post")
-    const { posts }: BlogPostsResponse = await response.json();
-
-    await delay(1000);
   return (
     <main>
    {/* <!-- Card Blog --> */}
@@ -82,7 +76,6 @@ export default async function page()  {
           {/* <!-- End Avatar --> */}
         </div>
       </div>
-
       <div className="absolute bottom-0 inset-x-0 ">
         <div className="flex flex-col h-full p-4 sm:p-6">
           <h3 className="text-lg sm:text-3xl font-semibold text-white group-hover:text-white/[.8]">
