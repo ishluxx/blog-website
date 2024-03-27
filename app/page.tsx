@@ -13,8 +13,8 @@ export default async function page()  {
   {/* <!-- Grid --> */}
   <div className="grid lg:grid-cols-2  gap-0.5">
     {/* <!-- Card --> */}
-    <a className="group relative   dark:focus:outline-none " href="#">
-      <div className="flex-shrink-0 relative  overflow-hidden w-full lg:h-[723px] h-[350px] before:absolute before:inset-x-0 before:size-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]">
+    <a className="group relative" href="#">
+      <div className="flex-shrink-0 relative  overflow-hidden w-full lg:h-[723px] h-[350px] before:absolute before:inset-x-0 before:size-full before:bg-gradient-to-t hover:from-gray-900/[.7] before:z-[1]">
         <Image className="size-full absolute top-0 start-0 object-cover" src={img1} alt="Image Description"/>
       </div>
       <div className="absolute top-0 inset-x-0 ">
@@ -53,7 +53,7 @@ export default async function page()  {
 <div className='grid lg:grid-rows-2 gap-0.5'>
     {/* <!-- Card --> */}
     <a className="group relative block dark:focus:outline-none d" href="#">
-      <div className="flex-shrink-0 relative  overflow-hidden w-full h-[360px] before:absolute before:inset-x-0 before:size-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]">
+      <div className="flex-shrink-0 relative  overflow-hidden w-full h-[360px] before:absolute before:inset-x-0 before:size-full before:bg-gradient-to-t hover:from-gray-900/[.7] before:z-[1]">
         <Image className="size-full absolute top-0 start-0 object-cover" src={img1} alt="Image Description"/>
       </div>
 
@@ -90,7 +90,7 @@ export default async function page()  {
     {/* <!-- End Card --> */}
     {/* <!-- Card --> */}
     <a className="group relative block dark:focus:outline-none d" href="#">
-      <div className="flex-shrink-0 relative  overflow-hidden w-full h-[360px] before:absolute before:inset-x-0 before:size-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]">
+      <div className="flex-shrink-0 relative  overflow-hidden w-full h-[360px] before:absolute before:inset-x-0 before:size-full before:bg-gradient-to-t hover:from-gray-900/[.7] before:z-[1]">
         <Image className="size-full absolute top-0 start-0 object-cover" src={img1} alt="Image Description"/>
       </div>
 
