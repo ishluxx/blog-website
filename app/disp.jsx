@@ -17,7 +17,7 @@ export default function BlogPage() {
         // Shuffle the data array randomly
         const shuffledData = shuffleArray(data);
         // Slice the shuffled array to get only 6 posts
-        const limitedPosts = shuffledData.slice(0, 5);
+        const limitedPosts = shuffledData.slice(0, 10);
         setPosts(limitedPosts);
       } catch (error) {
         console.error('Error fetching posts:', error);
