@@ -2,3 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  font-weight: bold;
+}
+
+.content h1 {
+  font-weight: bold;
+  font-size: 2rem; /* Example font size for Heading 1 */
+}
+
+.content h2 {
+  font-weight: bold;
+  font-size: 1.75rem; /* Example font size for Heading 2 */
+}
+
+.content h3 {
+  font-weight: bold;
+  font-size: 1.5rem; /* Example font size for Heading 3 */
+}
+
+.content h4 {
+  font-weight: bold;
+  font-size: 1.25rem; /* Example font size for Heading 4 */
+}
+
+.content h5 {
+  font-weight: bold;
+  font-size: 1rem; /* Example font size for Heading 5 */
+}
+
+.content h6 {
+  font-weight: bold;
+  font-size: 0.875rem; /* Example font size for Heading 6 */
+}

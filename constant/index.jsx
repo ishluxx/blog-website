@@ -11,10 +11,10 @@ export const subNavLinks = [
     {  href:'/Howto',label:'HOW TO'},
     {  href:'/Troubleshoot',label:'TROUBLESHOOT'},
     {  href:'/Social',label:'SOCIAL'},
-    {  href:'/Internet',label:'INTERNET'},
     {  href:'/Finance',label:'FINANCE'},
+    {  href:'/Travel',label:'TRAVEL'},
+    {  href:'/Education',label:'SCHOLARSHIP'},
     {  href:'/Top10',label:'TOP10'},
-    {  href:'/Tools',label:'TOOLS'},
 ]
 export const footerLinks = [
     {  href:'/disclamer',label:'Disclamer'},

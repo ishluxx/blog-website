@@ -1,33 +1,15 @@
 export interface BlogPost {
   id: string;
   date: string;
-  author: Author[];
+  author: string;
+  authorImage:string;
+  imageUrl:string;
   title: string;
-  summary: Summary[];
-  content: Content[];
-}
-
-export interface Author {
-  image: string;
-  name: string;
-}
-
-export interface Summary {
-  image: string;
-  intro: string;
-}
-
-export interface Content {
-  paragraphs: Paragraph[];
-}
-
-export interface Paragraph {
-  sub_section_title?: string;
-  section_conclusion?: string;
-  image: string;
   description: string;
+  content: any;
+  categories:string
 }
-
 export interface BlogPostsResponse {
+  map(arg0: (post: BlogPost) => import("react").JSX.Element): import("react").ReactNode;
   posts: BlogPost[];
 }

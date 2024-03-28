@@ -1,90 +1,142 @@
-import img1 from '@/assets/img1.jpg'
+import { delay } from "@/lib/utils";
+import { BlogPost, BlogPostsResponse } from "@/models/BlogPost";
+import { Metadata } from "next";
 import Image from "next/image";
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import Disp from'@/app/disp';
 
 
-const page = () => {
-  return (
-      <main>
-          {/* <!-- Blog Article --> */}
-   <div className="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
-     <div className="max-w-2xl">
-       {/* <!-- Avatar Media --> */}
-       <div className="flex justify-between items-center mb-6">
-         <div className="flex w-full sm:items-center gap-x-5 sm:gap-x-3">
-           <div className="flex-shrink-0">
-             <Image className="size-12 rounded-full" src="https://ishluxx.github.io/author/1504.jpg" alt="Image Description" width={50} height={50}/>
-           </div>
-   
-           <div className="grow">
-             <div className="flex justify-between items-center gap-x-2">
-               <div>
-                 {/* <!-- Tooltip --> */}
-                 <div className="hs-tooltip inline-block [--trigger:hover] [--placement:bottom]">
-                   <div className="hs-tooltip-toggle sm:mb-1 block text-start cursor-pointer">
-                     <span className="font-semibold text-black ">
-                       Ish Luxx
-                     </span>
-                   </div>
-                 </div>
-                 {/* <!-- End Tooltip --> */}
-                 <ul className="text-xs text-black">
-                   <li className="inline-block  pe-6 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-2 before:-translate-y-1/2 before:size-1 before:bg-gray-300 before:rounded-full dark:text-gray-400 dark:before:bg-gray-600">
-                     Jan 18
-                   </li>
-                 </ul>
-               </div>
-               {/* <!-- Button Group --> */}
-               <div></div>
-               {/* <!-- End Button Group --> */}
-             </div>
-           </div>
-         </div>
-       </div>
-       {/* <!-- End Avatar Media --> */}
-       {/* <!-- Content --> */}
-       <div className="space-y-5 md:space-y-8">
-         <div className="space-y-3">
-           <h2 className="text-2xl font-bold md:text-3xl text-black">Announcing a free plan for small teams</h2>
-           <p className="text-lg text-black">At preline, our mission has always been focused on bringing openness and transparency to the design process. ve always believed that by providing a space where designers can share ongoing work not only empos them to make better products, it also helps them grow.</p>
-          <p className="text-lg text-black">re proud to be a part of creating a more open culture and to continue building a product that supports this vision.</p>
-         </div>
-         <figure>
-           <Image className="w-full object-cover rounded-xl" src={img1} alt="Image Description"/>
-           <figcaption className="mt-3 text-sm text-center text-black">
-             A woman sitting at a table.
-           </figcaption>
-         </figure>
-         <p className="text-lg text-black">As ve grown, ve seen how Preline has helped companies such as Spotify, Microsoft, Airbnb, Facebook, and Intercom bring their designers closer together to create amazing things. ve also learned that when the culture of sharing is brought in earlier, the better teams adapt and communicate with one another.</p>
-         <p className="text-lg text-black">s why are excited to share that now have a <a className="text-blue-600 decoration-2 hover:underline font-medium" href="#">free version of Preline</a>, which will allow individual designers, startups and other small teams a chance to create a culture of openness early on.</p>
-         <blockquote className="text-center p-4 sm:px-7">
-           <p className="text-xl font-medium text-black md:text-2xl md:leading-normal xl:text-2xl xl:leading-normal">
-             To say that switching to Preline has been life-changing is an understatement. My business has tripled and I got my life back.
-           </p>
-           <p className="mt-5 text-black">
-             Nicole Grazioso
-           </p>
-         </blockquote>
-         <figure>
-           <Image className="w-full object-cover rounded-xl" src={img1} alt="Image Description"/>
-           <figcaption className="mt-3 text-sm text-center text-black">
-             A man and a woman looking at a cell phone.
-           </figcaption>
-         </figure>
-         <div className="space-y-3">
-           <h3 className="text-2xl font-semibold ">Bringing the culture of sharing to everyone</h3>
-           <p className="text-lg text-black">know the po of sharing is real, and want to create an opportunity for everyone to try Preline and explore how transformative open communication can be. Now you can have a team of one or two designers and unlimited spectators (think PMs, management, marketing, etc.) share work and explore the design process earlier.</p>
-         </div>
-         <ul className="list-disc list-outside space-y-5 ps-5 text-lg text-black ">
-           <li className="ps-2">Preline allows us to collaborate in real time and is a really great way for leadership on the team to stay up-to-date with what everybody is working on  <a className="text-blue-600 decoration-2 hover:underline font-medium" href="#">said</a> Stewart Scott-Curran, Intercoms Director of Brand Design.</li>
-           <li className="ps-2">Preline opened a new way of sharing.  a persistent way for everyone to see and absorb each  said David Scott, Creative Director at <a className="text-blue-600 decoration-2 hover:underline font-medium" href="#">Eventbrite</a>.</li>
-         </ul>
-         <p className="text-lg text-black">Small teams and individual designers need a space where they can watch the design process unfold, both for themselves and for the people they work with – no matter if its a fellow designer, product manager, developer or client. Preline allows you to invite more people into the process, creating a central place for conversation around design. As those teams grow, transparency and collaboration becomes integrated in how they communicate and work together.</p>
-       </div>
-       {/* <!-- End Content --> */}
-     </div>
-   </div>
-      </main>
-     );
+interface BlogPostPageProps { params: { postId: string };}
+
+export async function generateMetadata({
+  params: { postId },
+}: BlogPostPageProps): Promise<Metadata> {
+  const response = await fetch(`http://localhost:3006/post/${postId}`);
+  const post: BlogPost = await response.json();
+
+  return {
+    title: post.title,
+    description: post.description,
+    // openGraph: {
+    //   images: [
+    //     {
+    //       url: post.imageUrl
+    //     }
+    //   ]
+    // }
+  };
 }
 
-export default page
+
+export default async function BlogPostPage({
+  params: { postId },
+}: BlogPostPageProps) {
+  const response = await fetch(`http://localhost:3006/post/${postId}`);
+  const { author,authorImage,date,title,imageUrl,content,categories }: BlogPost = await response.json();
+
+  if (response.status === 404) {
+    notFound();
+  }
+
+  await delay(1000);
+
+ 
+  return (
+    <main>
+       {/* <!-- Blog Article --> */}
+<div className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
+  <div className="grid lg:grid-cols-3 gap-y-8 lg:gap-y-0 lg:gap-x-6">
+    {/* <!-- Content --> */}
+    <div className="lg:col-span-2">
+      <div className="py-3 lg:pe-8">
+        <div className="space-y-4 lg:space-y-8">
+        <Link className="inline-flex items-center gap-x-1.5 text-sm text-gray-600 decoration-2  no-underline " href="/">
+            <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            Back to Blog
+          </Link>
+          <div className="text-center">
+            <div className="grid lg:grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 lg:grid-cols-1 gap-3">
+                <figure className="relative w-full h-10">
+                    <div className="flex items-center">
+                    <Image src={authorImage} alt={author} width={50} height={50} className=" rounded-full mb-2 "/>
+                     <div className="px-4">
+                        <p className="text-black text-left">Written by {author}</p>
+                        <p className="text-gray-600  ">{new Date(date).toLocaleDateString()}</p>
+                     </div>
+                    </div>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div>
+          <div className="max-w-3xl mx-auto py-5">
+          <h1 className="text-3xl font-bold mb-4  ">{title}</h1>
+          <div>
+            <Image src={imageUrl} width={650} height={500} alt={author} className=" size-full rounded-xl"/>
+          </div>
+          <div className="flex items-center mb-4">
+          </div>
+          <div className='content' dangerouslySetInnerHTML={{ __html: content }}></div>
+         </div>
+          </div>
+          <div className="grid lg:flex lg:justify-between lg:items-center gap-y-5 lg:gap-y-0">
+            {/* <!-- Badges/Tags --> */}
+            <div>
+              <a className="m-0.5 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 :800 :-gray-700 :y-200 :tline-none :ng-1 :ng-gray-600" href="#">
+                Free
+              </a>
+              <a className="m-0.5 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 :800 :-gray-700 :y-200 :tline-none :ng-1 :ng-gray-600" href="#">
+                Team
+              </a>
+            </div>
+            {/* <!-- End Badges/Tags --> */}
+
+          </div>
+        </div>
+      </div>
+    </div>
+    {/* <!-- End Content --> */}
+
+    {/* <!-- Sidebar --> */}
+    <div className="lg:col-span-1 lg:w-full lg:h-full lg:bg-gradient-to-r lg:from-gray-50 lg:via-transparent lg:to-transparent :te-800">
+      <div className="sticky top-0 start-0 py-8 lg:ps-8">
+        {/* <!-- Avatar Media --> */}
+        <div className="group flex items-center gap-x-3 border-b border-gray-200 pb-8 mb-8 :ray-700">
+          <a className="block flex-shrink-0" href="#">
+            <Image className="size-10 rounded-full" src={authorImage} alt={author} width={50} height={50}/>
+          </a>
+
+          <a className="group grow block" href="">
+            <h5 className="group-hover:text-gray-600 text-sm font-semibold text-gray-800 :ver:text-gray-400 :y-200">
+              {author}
+            </h5>
+          </a>
+
+          <div className="grow">
+            <div className="flex justify-end">
+              <button type="button" className="py-1.5 px-2.5 inline-flex items-center gap-x-2 text-xs font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none :tline-none :ng-1 :ng-gray-600">
+                <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
+                Follow
+              </button> 
+            </div>
+          </div>
+        </div>
+        {/* <!-- End Avatar Media --> */}
+        <div className="space-y-6">
+          {/* <!-- Media --> */}
+          <div>
+             <h2 className="text-lg font-semibold mb-4">Related Posts</h2>
+            <Disp/>
+           </div>
+        </div>
+      </div>
+    </div>
+    {/* <!-- End Sidebar --> */}
+  </div>
+</div>
+{/* <!-- End Blog Article --> */}
+    </main>
+  );
+}

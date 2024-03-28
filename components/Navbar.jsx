@@ -1,8 +1,9 @@
 "use client"
 import React from 'react'
 import Image from 'next/image'
-import icon from '@/public/icon1.png'
+import icon from '@/public/icon.png'
 import Link from 'next/link'
+import Scoll from '@/components/Scoll'
 import { useState } from 'react'
 import { navLinks,subNavLinks } from "@/constant/index";
 import { FaFacebook,FaGoogle,FaInstagram,FaPinterestP,FaTwitter, FaYoutube} from 'react-icons/fa'
@@ -20,7 +21,7 @@ const Navbar = () => {
         <FaTwitter className=' hover:text-blue-300'/>
         {/* <FaYoutube className=' hover:text-red-500'/> */}
       </div>
-        <div className='flex  items-center font-medium justify-around'>
+        <div className='flex  items-center font-medium justify-around '>
           <div className='z-50  md:w-auto w-full flex justify-between'>
                 <Link href='/'>
                   <Image 
@@ -43,8 +44,8 @@ const Navbar = () => {
             ))}
           </ul>
           {/* on small device  */}
-          <div></div>
-          <ul className={`lg:hidden z-10 bg-white absolute  w-full top-20  py-24  pl-4 uppercase font-[Poppins] duration-500 ${Open ? "top-0" : "top-[-100%]"} `}> 
+          <ul className={`lg:hidden z-10 bg-white absolute h-screen overscroll-y-none  w-full  top-20 py-10 pl-4 uppercase font-[Poppins] duration-500 ${Open ? "left-0" : "left-[-100%]"} `}> 
+          <Scoll/>
               {navLinks.map((links)=>(
                 <li key={links.href} className='py-7 px-5 text-left md:cursor-pointer ' >
                   <a href={links.href}>
@@ -52,7 +53,7 @@ const Navbar = () => {
                   </a>
                 </li>
               ))}
-              <ul className='grid grid-cols-2 gap-5 px-2 bg-white'>
+              <ul className='grid grid-cols-2 gap-5 mt-5 px-2 bg-white'>
                 {subNavLinks.map((sub)=>(
                   <li key={sub.href} className='hover:text-blue-500 duration-0 hover:duration-300  px-5 '>
               <Link href={sub.href} className=''>{sub.label}</Link>
