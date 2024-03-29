@@ -190,7 +190,7 @@ export default async function BlogPostPage({ params: { Id }}: BlogPostPageProps)
               <div className="space-y-6">
                 {/* <!-- Media --> */}
                 <div>
-                  <h2 className="text-lg font-semibold mb-4">Related Posts</h2>
+                  <h2 className="text-lg font-semibold mb-4">Popural Posts</h2>
                   <Disp />
                 </div>
               </div>
