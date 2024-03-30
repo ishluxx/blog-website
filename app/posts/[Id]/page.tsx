@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Disp from "@/app/disp";
+import TableOfContents from "@/components/TableofContents";
 
 interface BlogPostPageProps {
   params: { Id: string };
@@ -42,7 +43,13 @@ export default async function BlogPostPage({ params: { Id }}: BlogPostPageProps)
   if (response.status === 404) {
     notFound();
   }
-
+  
+  const scrollToHeading = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <main>
@@ -104,13 +111,14 @@ export default async function BlogPostPage({ params: { Id }}: BlogPostPageProps)
                     <div>
                       <Image
                         src={imageUrl}
-                        width={650}
+                        width={550}
                         height={500}
                         alt={author}
                         className=" size-full rounded-xl"
                       />
                     </div>
                     <div className="flex items-center mb-4"></div>
+                    <TableOfContents content={content}/>
                     <div
                       className="content"
                       dangerouslySetInnerHTML={{ __html: content }}
