@@ -28,7 +28,7 @@ const Navbar = () => {
         <div className='flex items-center font-medium justify-around '>
           <div className='z-50 md:w-auto w-full flex justify-between'>
             <Link href='/'>
-              <Image className='md:cursor-pointer ml-3 ' src={icon} alt='logo' width={140} />
+              <Image className='md:cursor-pointer lg:ml-3 ml-6  ' src={icon} alt='logo' width={140} />
             </Link>
             <div className="text-3xl md:hidden py-14 pr-5 " onClick={() => setOpen(!Open)}>
               {Open ? <FaTimes /> : <FaBars />}

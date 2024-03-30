@@ -39,11 +39,11 @@ const TableOfContents = ({ content }) => {
   return (
     <div className="max-w-3xl mx-auto">
     <h2 className="text-xl font-bold mb-2">Table of Contents</h2>
-    <ul className="list-disc pl-6 bg-slate-100">
+    <ul className="list-disc pl-2 pr-2 ">
       {tableOfContents.map((item, index) => (
         <li key={index} style={{ listStyleType: 'none' }}>
           {/* Use onClick event handler to call handleClick */}
-          <a href={`#${item.id}`} onClick={handleClick(item.id)} className="font-semibold">{item.text}</a>
+          <a href={`#${item.id}`} onClick={handleClick(item.id)} className="font-semibold hover:text-blue-600 ">{item.text}</a>
         </li>
       ))}
     </ul>

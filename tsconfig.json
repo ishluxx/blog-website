@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/layout.tsx", "app/posts/[Id]/page.tsx", "components/generateTableOfContents.jsx", "components/TableofContents.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/layout.tsx", "app/posts/[Id]/page.tsx", "components/generateTableOfContents.jsx", "components/TableofContents.jsx", "app/disp.jsx"],
   "exclude": ["node_modules"]
 }

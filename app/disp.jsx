@@ -9,7 +9,7 @@ export default function BlogPage() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch("http://localhost:3006/post", { cache: 'no-store' });
+        const response = await fetch("http://localhost:3006/post?_limit=5&_random=true", { cache: 'no-store' });
         if (!response.ok) {
           throw new Error('Failed to fetch posts');
         }
