@@ -35,6 +35,11 @@ const TableOfContents = ({ content }) => {
     e.preventDefault(); // Prevent the default anchor link behavior
     scrollToHeading(id);
   };
+    // Conditionally render the table of contents
+    if (!content || tableOfContents.length === 0) {
+      return <div> </div>;
+    }
+  
 
   return (
     <div className="max-w-3xl mx-auto">

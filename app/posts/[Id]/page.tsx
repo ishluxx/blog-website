@@ -133,7 +133,10 @@ export default async function BlogPostPage({ params: { Id }}: BlogPostPageProps)
           {/* <!-- Sidebar --> */}
           <div className=" lg:col-span-1 lg:w-full lg:h-full lg:bg-gradient-to-r lg:from-gray-50 lg:via-transparent lg:to-transparent ">
             <div className="lg:sticky top-0 start-0 py-8 lg:ps-8 ">            
-                  <TableOfContents content={content}  />
+            <div className="hidden lg:block">
+                {/* Show table of contents in the sidebar on large devices */}
+                <TableOfContents content={content}  />
+              </div>
                 <div className="mt-10">
                   <h2 className="text-lg font-semibold mb-4">Popural Posts</h2>
                   <Disp />
