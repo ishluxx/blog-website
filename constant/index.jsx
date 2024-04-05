@@ -1,9 +1,9 @@
 
 export const navLinks = [
-    {  href:'/',label:'Home'},
+    // {  href:'/',label:'Home'},
+    {  href:'/Blog',label:'Blog'},
     {  href:'/About',label:'About'},
     {  href:'/contact',label:'Contact'},
-    {  href:'/Blog',label:'Blog'},
 ]
 
 export const subNavLinks = [

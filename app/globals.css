@@ -2,19 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.content h1,
-.content h2,
-.content h3,
-.content h4,
-.content h5,
-.content h6 {
-  font-weight: bold;
-}
-
 .content h1 {
   font-weight: bold;
-  font-size: 2rem; /* Example font size for Heading 1 */
+  font-size: 2rem;
 }
 
 .content h2 {

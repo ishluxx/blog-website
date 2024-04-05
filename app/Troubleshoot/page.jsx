@@ -41,7 +41,9 @@ export default function BlogPage() {
                </div>
                   <div className="grow mt-4 sm:mt-0 sm:ms-6 px-4 sm:px-0">
                     <h3 className='text-xl font-semibold text-gray-800 '>
+                    <Link href={`/posts/${id}`} className="">
                       {title}
+                      </Link>
                     </h3>
                     <p className='text-gray-500'>{`${description.slice(0,100)}...`}</p>
                     <div className="f">
