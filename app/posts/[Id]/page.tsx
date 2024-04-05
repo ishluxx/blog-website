@@ -53,10 +53,8 @@ export default async function BlogPostPage({ params: { Id }}: BlogPostPageProps)
 
   return (
     <main>
-      {/* <!-- Blog Article --> */}
       <div className="max-w-6xl px-4 sm:px-6 lg:px-8 m-auto ">
         <div className="grid lg:grid-cols-3 gap-y-8 lg:gap-y-0 lg:gap-x-6 justify-end">
-          {/* <!-- Content --> */}
           <div className="lg:col-span-2">
             <div className="py-3 lg:pe-8">
               <div className="space-y-4 lg:space-y-8">
@@ -129,12 +127,9 @@ export default async function BlogPostPage({ params: { Id }}: BlogPostPageProps)
               </div>
             </div>
           </div>
-          {/* <!-- End Content --> */}
-          {/* <!-- Sidebar --> */}
           <div className=" lg:col-span-1 lg:w-full lg:h-full lg:bg-gradient-to-r lg:from-gray-50 lg:via-transparent lg:to-transparent ">
             <div className="lg:sticky top-0 start-0 py-8 lg:ps-8 ">            
             <div className="hidden lg:block">
-                {/* Show table of contents in the sidebar on large devices */}
                 <TableOfContents content={content}  />
               </div>
                 <div className="mt-10">
@@ -144,9 +139,7 @@ export default async function BlogPostPage({ params: { Id }}: BlogPostPageProps)
             </div>
           </div>
           </div>
-          {/* <!-- End Sidebar --> */}
         </div>
-      {/* <!-- End Blog Article --> */}
     </main>
   );
 }
