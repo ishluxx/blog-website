@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Scoll from '@/components/Scoll'
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
   
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <Scoll/>
         <Navbar/>
         <main className="p-5">
