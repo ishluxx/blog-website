@@ -45,6 +45,7 @@ export default function BlogPage() {
                       {title}
                       </Link>
                     </h3>
+                    <p className="text-gray-600 py-1 ">{new Date(date).toString().slice(0,15)}</p>
                     <p className='text-gray-500'>{`${description.slice(0,100)}...`}</p>
                     <div className="f">
                       <Link href={`/posts/${id}`} className="">

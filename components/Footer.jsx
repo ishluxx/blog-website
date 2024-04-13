@@ -12,17 +12,17 @@ export default function Footer() {
           {/* <Link href='/posts'>Blog</Link> */}
         </div>
         <div className='flex justify-center text-2xl gap-5' >
-          <FaFacebook />
-          <FaInstagram />
-          <FaPinterestP />
-          <FaTwitter />
+          <Link href='#' target='_blank'><FaFacebook /></Link>
+          <Link href='#' target='_blank'><FaInstagram /></Link>
+          <Link href='#' target='_blank'><FaPinterestP /></Link>
+          <Link href='#' target='_blank'><FaTwitter /></Link>
           {/* <FaYoutube /> */}
         </div>
         <div className='mt-4 text-center px-3' >
           <p className=' flex justify-center'> &copy;{new Date().getFullYear()} an Affiliate advertising program designed to provide a means for sites to </p>
            <p className=' flex justify-center' >earn advertising fees by advertising and linking to amazon.com</p>
         </div>
-             <ul className='md:flex justify-center mt-4 mb-5 px-3 gap-2 grid grid-cols-2 '>
+             <ul className='md:flex justify-center mt-4 mb-5 px-6 md:gap-3 grid grid-cols-2 '>
               {footerLinks.map((links)=>(
                 <li key={links} className='md:cursor-pointer'>
                   <a href={links.href}>{links.label}</a>

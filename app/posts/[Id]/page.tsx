@@ -10,6 +10,13 @@ interface BlogPostPageProps {
   params: { Id: string };
 }
 
+export async function getServerSideProps() {
+  const response = await fetch("http://localhost:3006/post");
+  const { posts }: BlogPostsResponse = await response.json();
+
+  return posts.map(({ id }) => id);
+}
+
 export async function generateMetadata({params: { Id }}: BlogPostPageProps): Promise<Metadata> {
   const response = await fetch(`http://localhost:3006/post/${Id}`);
   const post: BlogPost = await response.json();
@@ -52,8 +59,8 @@ export default async function BlogPostPage({ params: { Id }}: BlogPostPageProps)
   };
 
   return (
-    <main>
-      <div className="max-w-6xl px-4 sm:px-6 lg:px-8 m-auto ">
+    <main className="flex justify-center">
+      <div className=" max-w-6xl px-4 sm:px-6 lg:px-8 ">
         <div className="grid lg:grid-cols-3 gap-y-8 lg:gap-y-0 lg:gap-x-6 justify-end">
           <div className="lg:col-span-2">
             <div className="py-3 lg:pe-8">
@@ -94,9 +101,16 @@ export default async function BlogPostPage({ params: { Id }}: BlogPostPageProps)
                             <p className="text-black text-left">
                               Written by {author}
                             </p>
-                            <p className="text-gray-600  ">
+                            <div className="text-gray-600 px-1 gap-2 ">
+                              <div className="md:hidden">
                               {new Date(date).toLocaleDateString()}
-                            </p>
+                              {new Date(date).toString().slice(15,21)}
+                              </div>
+                              <div className="hidden md:block">
+                              {new Date(date).toString().slice(0,15)}
+                              {new Date(date).toString().slice(15,21)}
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </figure>
@@ -104,7 +118,7 @@ export default async function BlogPostPage({ params: { Id }}: BlogPostPageProps)
                   </div>
                 </div>
                 <div>
-                  <div className="max-w-2xl mx-auto py-5">
+                  <div className="max-w-2xl mx-auto md:py-5 py-12 ">
                     <h1 className="text-3xl font-bold mb-4  ">{title}</h1>
                     <div>
                       <Image

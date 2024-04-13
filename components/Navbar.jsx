@@ -20,10 +20,19 @@ const Navbar = () => {
     <main>
       <nav className='bg-white'>
         <div className='hidden md:flex justify-end py-1 pr-20 w-full h-2 gap-3 mt-1 text-black'>
+        <Link href='#' target='_blank'>
           <FaFacebook className=' hover:text-blue-500' />
+        </Link>
+        <Link href='#' target='_blank'>
           <FaInstagram className=' hover:text-red-300' />
+        </Link>
+        <Link href='#' target='_blank'>
           <FaPinterestP className=' hover:text-red-500' />
+        </Link>
+        <Link href='#' target='_blank'>
           <FaTwitter className=' hover:text-blue-300' />
+        </Link>
+          
         </div>
         <div className='flex items-center font-medium justify-around '>
           <div className='z-50 md:w-auto w-full flex justify-between'>

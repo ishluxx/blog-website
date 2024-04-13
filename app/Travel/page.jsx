@@ -30,7 +30,7 @@ export default function BlogPage() {
   }, [categoriesToDisplay]);
 
   return (
-    <div className='max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto' >
+    <div className='max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto  ' >
       <div className='lg:gap-y-16 gap-10'>
         {/* card */}
         <div className='grid lg:grid-cols-2 ' >
@@ -45,6 +45,7 @@ export default function BlogPage() {
                       {title}
                       </Link>
                     </h3>
+                    <p className="text-gray-600 py-1 ">{new Date(date).toString().slice(0,15)}</p>
                     <p className='text-gray-500'>{`${description.slice(0,100)}...`}</p>
                     <div className="f">
                       <Link href={`/posts/${id}`} className="">

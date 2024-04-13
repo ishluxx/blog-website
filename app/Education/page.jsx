@@ -30,7 +30,7 @@ export default function BlogPage() {
   }, [categoriesToDisplay]);
 
   return (
-    <div className='max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto' >
+    <div className='max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto ' >
       <div className='lg:gap-y-16 gap-10'>
         {/* card */}
         <div className='grid lg:grid-cols-2 ' >
@@ -40,9 +40,12 @@ export default function BlogPage() {
                   <Image src={imageUrl} className="group-hover:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl"  alt={author} width={310} height={310}/>
                </div>
                   <div className="grow mt-4 sm:mt-0 sm:ms-6 px-4 sm:px-0">
-                    <h3 className='text-xl font-semibold text-gray-800 '>
+                  <h3 className='text-xl font-semibold text-gray-800 '>
+                    <Link href={`/posts/${id}`} className="">
                       {title}
+                      </Link>
                     </h3>
+                    <p className="text-gray-600 py-1 ">{new Date(date).toString().slice(0,15)}</p>
                     <p className='text-gray-500'>{`${description.slice(0,100)}...`}</p>
                     <div className="f">
                       <Link href={`/posts/${id}`} className="">

@@ -20,7 +20,16 @@ export default async function BlogPage() {
                     <Image className="size-[46px] border-2 border-white rounded-full" src={authorImage} alt={author} width={50} height={50} />
                     <div className="flex space-x-5">
                       <div className="text-white font-semibold">{author}</div>
-                      <div className="text-white">{date}</div>
+                      <div className="text-white">
+                      <div className="flex px-1 gap-3 ">
+                            <p className=" ">
+                              {new Date(date).toString().slice(0,15)}
+                            </p>
+                            {/* <p className=" ">
+                              {new Date(date).toString().slice(16,24)}
+                            </p> */}
+                            </div>
+                      </div>
                     </div>
                   </div>
                 </div>
