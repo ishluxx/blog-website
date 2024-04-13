@@ -10,18 +10,8 @@ interface BlogPostPageProps {
   params: { Id: string };
 }
 
-// export async function generateStaticParams() {
-//   const posts = await fetch('http://localhost:3006/post').then((res) => res.json());
- 
-//   return posts.map((post: { Id: any; }) => ({
-//     params: {
-//       Id: post.Id, // Assuming `Id` is the property representing the dynamic segment
-//     },
-//   }));
-// }
-
 export async function generateMetadata({params: { Id }}: BlogPostPageProps): Promise<Metadata> {
-  const response = await fetch(`https://jsonserver1-yblk.onrender.com/posts/${Id}`);
+  const response = await fetch(`http://localhost:3006/posts/${Id}`);
   const post: BlogPost = await response.json();
 
   return {
@@ -39,7 +29,7 @@ export async function generateMetadata({params: { Id }}: BlogPostPageProps): Pro
 
 // eslint-disable-next-line @next/next/no-async-client-component
 export default async function BlogPostPage({ params: { Id }}: BlogPostPageProps) {
-  const response = await fetch(`https://jsonserver1-yblk.onrender.com/posts/${Id}`);
+  const response = await fetch(`http://localhost:3006/post/${Id}`);
   const {
     author,
     authorImage,
@@ -121,24 +111,25 @@ export default async function BlogPostPage({ params: { Id }}: BlogPostPageProps)
                   </div>
                 </div>
                 <div>
-                <div className="max-w-2xl mx-auto md:py-5 py-12 ">
-                    <h1 className="text-3xl font-bold mb-4">{title}</h1>
-                    {imageUrl ? (
-                        <div>
-                            <Image
-                                src={imageUrl}
-                                width={550}
-                                height={500}
-                                alt={author}
-                                className="w-full lg:mb-2 rounded-xl"
-                            />
-                        </div>
-                    ) : null}
-                    <div className="pl-4 mb-4 mt-3 lg:hidden">
-                        <TableOfContents content={content}/>
+                  <div className="max-w-2xl mx-auto md:py-5 py-12 ">
+                    <h1 className="text-3xl font-bold mb-4  ">{title}</h1>
+                    <div>
+                      <Image
+                        src={imageUrl}
+                        width={550}
+                        height={500}
+                        alt={author}
+                        className=" w-full lg:mb-2 rounded-xl"
+                      />
                     </div>
-                    <div className="content" dangerouslySetInnerHTML={{ __html: content }}></div>
-                </div>
+                    <div className=" pl-4  mb-4 mt-3 lg:hidden ">
+                    <TableOfContents content={content}/>
+                    </div>
+                    <div
+                      className="content"
+                      dangerouslySetInnerHTML={{ __html: content }}
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
