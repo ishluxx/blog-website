@@ -21,7 +21,7 @@ interface BlogPostPageProps {
 // }
 
 export async function generateMetadata({params: { Id }}: BlogPostPageProps): Promise<Metadata> {
-  const response = await fetch(`http://localhost:3006/posts/${Id}`);
+  const response = await fetch(`https://jsonserver1-yblk.onrender.com/posts/${Id}`);
   const post: BlogPost = await response.json();
 
   return {
@@ -39,7 +39,7 @@ export async function generateMetadata({params: { Id }}: BlogPostPageProps): Pro
 
 // eslint-disable-next-line @next/next/no-async-client-component
 export default async function BlogPostPage({ params: { Id }}: BlogPostPageProps) {
-  const response = await fetch(`http://localhost:3006/posts/${Id}`);
+  const response = await fetch(`https://jsonserver1-yblk.onrender.com/posts/${Id}`);
   const {
     author,
     authorImage,
