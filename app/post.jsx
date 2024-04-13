@@ -5,7 +5,7 @@ export default async function BlogPage() {
   const apiurl = process.env.NODE_ENV === "development" 
   ? "http://localhost:3006/posts?_limit=4&_random=true"
   : "https://jsonserver1-yblk.onrender.com/posts?_limit=4&_random=true"
-  const response = await fetch(`http://localhost:3006/posts?_limit=4&_random=true`, { cache: 'no-store' });
+  const response = await fetch(apiurl, { cache: 'no-store' });
   const data = await response.json();
 
   return (
