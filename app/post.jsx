@@ -2,7 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default async function BlogPage() {
-  const response = await fetch(`http://localhost:3006/post?_limit=4&_random=true`, { cache: 'no-store' });
+  const apiurl = process.env.NODE_ENV === "development" 
+  ? "http://localhost:3006/posts?_limit=4&_random=true"
+  : "https://jsonserver1-yblk.onrender.com/posts?_limit=4&_random=true"
+  const response = await fetch(`http://localhost:3006/posts?_limit=4&_random=true`, { cache: 'no-store' });
   const data = await response.json();
 
   return (
