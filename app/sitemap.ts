@@ -26,6 +26,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         changeFrequency: "monthly", // Adjust frequency as needed
         priority: 1 // Adjust priority as needed
       },
+      {
+        url: `${process.env.SITE_URL}/Top10`,
+        lastModified: new Date(), // You can modify this according to your data if you have a last modified date for the About page
+        changeFrequency: "monthly", // Adjust frequency as needed
+        priority: 1 // Adjust priority as needed
+      },
       ...postEntries,
     ];
   } catch (error) {
