@@ -8,13 +8,13 @@ export const navLinks = [
 
 export const subNavLinks = [
     // {  href:'/',label:'HOME'},
-    {  href:'/Howto',label:'HOW TO'},
-    {  href:'/Troubleshoot',label:'TROUBLESHOOT'},
-    {  href:'/Social',label:'SOCIAL'},
-    {  href:'/Finance',label:'FINANCE'},
-    {  href:'/Travel',label:'TRAVEL'},
-    {  href:'/Education',label:'SCHOLARSHIP'},
-    {  href:'/Top10',label:'TOP10'},
+    {  href:'/categories/Howto',label:'HOW TO'},
+    {  href:'/categories/Troubleshoot',label:'TROUBLESHOOT'},
+    {  href:'/categories/Social',label:'SOCIAL'},
+    {  href:'/categories/Finance',label:'FINANCE'},
+    {  href:'/categories/Travel',label:'TRAVEL'},
+    {  href:'/categories/Education',label:'SCHOLARSHIP'},
+    {  href:'/categories/Top10',label:'TOP10'},
 ]
 export const footerLinks = [
     {  href:'/disclamer',label:'Disclamer'},

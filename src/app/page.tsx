@@ -1,12 +1,12 @@
 import React from 'react'
 import Post from '@/app/post'
-import Howto from'@/app/Howto/page'
-import Troubleshoot from '@/app/Troubleshoot/page'
-import Travel from '@/app/Travel/page'
-import Social from '@/app/Social/page'
-import Finance from '@/app/Finance/page'
-import Education from '@/app/Education/page'
-import Top10 from '@/app/Top10/page'
+import Howto from'@/app/categories/Howto/page'
+import Troubleshoot from '@/app/categories/Troubleshoot/page'
+import Travel from '@/app/categories/Travel/page'
+import Social from '@/app/categories/Social/page'
+import Finance from '@/app/categories/Finance/page'
+import Education from '@/app/categories/Education/page'
+import Top10 from '@/app/categories/Top10/page'
 
 const page = () => {
   return (

@@ -40,14 +40,14 @@ export default function BlogPage() {
                </div>
                   <div className="grow mt-4 sm:mt-0 sm:ms-6 px-4 sm:px-0">
                   <h3 className='text-xl font-semibold text-gray-800 '>
-                    <Link href={`/posts/${id}`} className="">
+                    <Link href={`/${id}`} className="">
                       {title}
                       </Link>
                     </h3>
                     <p className="text-gray-600 py-1 ">{new Date(date).toString().slice(0,15)}</p>
                     <p className='text-gray-500'>{`${description.slice(0,100)}...`}</p>
                     <div className="f">
-                      <Link href={`/posts/${id}`} className="">
+                      <Link href={`/${id}`} className="">
                         <h3 className="mt-4 inline-flex items-center gap-x-1 text-blue-600 decoration-2 hover:underline-none font-medium ">Read More
                         <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                         </h3>

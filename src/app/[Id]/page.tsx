@@ -1,4 +1,4 @@
-import { BlogPost, BlogPostsResponse } from "@/models/BlogPost";
+import { BlogPost  } from "@/models/BlogPost";
 import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";

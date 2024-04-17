@@ -37,7 +37,7 @@ export default async function BlogPage() {
             </div>
             <div className="absolute bottom-0 inset-x-0 z-10">
               <div className="flex flex-col h-full p-4 sm:p-6">
-                <Link href={`/posts/${id}`} className="text-lg font-bold">
+                <Link href={`/${id}`} className="text-lg font-bold">
                   <h3 className="text-lg sm:text-3xl font-semibold text-white group-hover:text-white/[.8]">{title}</h3>
                 </Link>
               </div>

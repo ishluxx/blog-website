@@ -3,12 +3,10 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-
 export default function BlogPage() {
   const [posts, setPosts] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const categoriesToDisplay = [ "Lifestyle & Fashion","Beauty & Skincare" ,"Travel & Tourism"]; // Add the categories you want to display here
-
+  const categoriesToDisplay = ["Technology & Gadgets","Food & Recipes" , "Science", "Art", "Gardening & Horticulture", "Spirituality & Mindfulness","DIY & Crafts","Home Decor & Interior Design","Home Improvement & DIY"]; // Add the categories you want to display here
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -40,15 +38,15 @@ export default function BlogPage() {
                   <Image src={imageUrl} className="group-hover:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl"  alt={author} width={310} height={310}/>
                </div>
                   <div className="grow mt-4 sm:mt-0 sm:ms-6 px-4 sm:px-0">
-                    <h3 className='text-xl font-semibold text-gray-800 '>
-                    <Link href={`/posts/${id}`} className="">
+                  <h3 className='text-xl font-semibold text-gray-800 '>
+                    <Link href={`/${id}`} className="">
                       {title}
                       </Link>
                     </h3>
                     <p className="text-gray-600 py-1 ">{new Date(date).toString().slice(0,15)}</p>
                     <p className='text-gray-500'>{`${description.slice(0,100)}...`}</p>
                     <div className="f">
-                      <Link href={`/posts/${id}`} className="">
+                      <Link href={`/${id}`} className="">
                         <h3 className="mt-4 inline-flex items-center gap-x-1 text-blue-600 decoration-2 hover:underline-none font-medium ">Read More
                         <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                         </h3>

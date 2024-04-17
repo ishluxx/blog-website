@@ -45,16 +45,16 @@ export default function BlogPage() {
           <a class="group flex items-center gap-x-6" href="#">
             <div class="grow py-3">
             <span className="group flex items-center gap-x-6 ">
-              <Link href={`/posts/${id}`} className='grow space-y-3' >
+              <Link href={`/${id}`} className='grow space-y-3' >
                 <h3 className="text-sm font-bold space-y-2 text-gray-800 group-hover:text-blue-600 ">{title}</h3>
               </Link>            
             </span>
              
             </div>
-{/*
+
             <div class="flex-shrink-0 relative rounded-lg overflow-hidden size-20">
               <Image class="size-full absolute top-0 start-0 object-cover rounded-lg" src={imageUrl} alt={author} width={70} height={70}/>
-            </div> */}
+            </div>
           </a>
           </div>
         </div>

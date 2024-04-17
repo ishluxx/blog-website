@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import icon from '@/public/icon.png';
+import icon from '../../public/icon.png';
 import Link from 'next/link';
 import Scoll from '@/components/Scoll';
 import { useState } from 'react';
